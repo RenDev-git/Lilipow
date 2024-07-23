@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PC Screen Stream</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+        <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+        <script src="{{url_for('static', filename='joy.js')}}"></script>
+        <style>
+            body {
+                background-color: #222222;
+                margin: 0;
+                overflow: hidden;
+                font-family: 'Poppins';font-size: 22px;
+            }
+            #video {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: fill;
+                    max-height: 100%;
+            }
+            #delay-counter {
+                color: white;
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                background-color: rgba(0, 0, 0, 0.7);
+                border-radius: 10px;
+            }
+              
+        </style>
+    </head>
+    <body>
+        <img id="video" src="/video_feed">
+        <div id="delay-counter"></div>
+
+        <script>
+            var delayCounter = document.getElementById('delay-counter');
+            var delayText = delayCounter.innerHTML;
+            var prevTimestamp = null;
+/*
+              
+            fetch('/timestamp')
+                .then(response => response.text())
+                .then(timestamp => {
+                    prevTimestamp = parseFloat();
+
+                });
+            setInterval(function() {
+                fetch('/timestamp')
+                    .then(response => response.text())
+                    .then(timestamp => {
+                        var currentTimestamp = parseFloat(timestamp);
+                        if (prevTimestamp !== null) {
+
+
+                            var delay = (currentTimestamp - prevTimestamp).toFixed(2);
+                            delayCounter.innerHTML = delayText + ' ' + delay + ' s';
+                        }
+                        prevTimestamp = currentTimestamp;
+                    });
+            }, 1000);*/
+
+
+        </script>
+
+    </body>
+</html>
